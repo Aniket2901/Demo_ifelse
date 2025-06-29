@@ -1,0 +1,68 @@
+<div class="table-container" *ngIf="gridColumns.length > 0 && paginatedMembers.length > 0">
+  <div>
+    <tr class="table-head">
+      <th class="table-h1">Team members <p class="user-count">{{members.length}}Users</p>
+      </th>
+      <!-- <th class="user-count">{{members.length}}Users</th> -->
+      <th><i class="bi bi-three-dots-vertical"></i></th>
+    </tr>
+  </div>
+  <table>
+    <thead>
+      <tr class="table-subheading">
+        <th><input type="checkbox" [checked]="isAllSelected()" [indeterminate]="isIndeterminate()"
+            (change)="toggleAll($event)" /></th>
+        <th *ngFor="let column of gridColumns">
+          {{ column.column_name }}
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let member of paginatedMembers">
+        <td><input type="checkbox" [(ngModel)]="member.selected" /></td>
+        <td>
+      <tr>{{member.name.first_name}}{{member.name.last_name}}</tr>
+      <tr>{{member.name.handle}}</tr>
+      </td>
+      <td><span [ngClass]="member.status">{{ member.status }}</span></td>
+      <td>{{ member.role }}</td>
+      <td>
+        <div class="progress-bar">
+          <div class="progress" [style.width.%]="member.license_used || 0"></div>
+          <!-- <div>{{member.license_used}}</div> -->
+        </div>
+      </td>
+      <td>
+        <span *ngFor="let team of member.teams" class="team-tag">{{ team.value }}</span>
+      </td>
+      <td>
+        <button class="btn-delete" (click)="deleteSelected()"><i class="bi bi-trash"></i></button>
+        <button class="btn-delete" (click)="editMember(member)"><i class="bi bi-pen"></i></button>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1"><i
+        class="bi bi-arrow-left"></i>Previous</button>
+    <div class="page-count">
+      <a *ngFor="let page of pages" (click)="setPage(page)" [class.active]="currentPage === page">
+        {{ page }}
+      </a>
+    </div>
+    <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next<i
+        class="bi bi-arrow-right"></i></button>
+  </div>
+</div>
+<div *ngIf="editingMember" class="modal-overlay">
+  <div class="pop">
+    <h2>Edit Member</h2>
+    <p><strong>Name:</strong> {{ editingMember.name.first_name }} {{ editingMember.name.last_name }}</p>
+    <p><strong>Email:</strong> {{ editingMember.email }}</p>
+    <p><strong>Role:</strong> {{ editingMember.role }}</p>
+    <p><strong>Status:</strong> {{ editingMember.status }}</p>
+    <button (click)="closeEdit()">Close</button>
+  </div>
+</div>

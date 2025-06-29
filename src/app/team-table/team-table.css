@@ -1,0 +1,147 @@
+.table-container {
+  width: 100%;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ccc;
+}
+.table-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table-h1{
+  display: inline-flex;
+}
+.table-subheading{
+      background: whitesmoke;
+}
+.user-count{
+  background-color: rgb(244, 215, 239);
+  color: black;
+    border-radius: 30px;
+    height: 20px;
+    width: 54px;
+    font-size: x-small;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.progress-bar {
+  background: #eee;
+  border-radius: 4px;
+  height: 8px;
+  width: 100px;
+  margin-bottom: 4px;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: purple;
+  border-radius: 4px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #e0e0ff;
+  color: #333;
+  border-radius: 8px;
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+.Customer {
+  color: green;
+}
+
+.Churned {
+  color: red;
+}
+
+.pagination {
+  padding: 20px;
+  display: flex;
+  /* gap: 8px; */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.pagination .active {
+  /* background: purple; */
+  color: blueviolet;
+}
+/* .progress-bar {
+  width: 100px;
+  background: #eee;
+  border-radius: 4px;
+  height: 10px;
+} */
+
+.progress {
+  height: 10px;
+  background: purple;
+  border-radius: 4px;
+}
+
+.team-tag {
+  margin-right: 5px;
+  padding: 2px 6px;
+  background-color: #e0e0ff;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.btn-delete{
+  border: none;
+  background: none;
+  padding: 10px;
+}
+.page-count{
+  display: flex;
+  /* gap: 10px; */
+  cursor: pointer;
+  justify-content: space-around;
+  width: 40%;
+}
+.page-count a{
+  color: black;
+  text-decoration: none;
+}
+.modal-overlay {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50vw;
+  height: 50vh;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pop {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}

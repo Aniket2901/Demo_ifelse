@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; prevent body from scrolling */
+}
+
+/* Layout container */
+.layout {
+  display: flex;
+  height: 100vh; /* full screen */
+  /* overflow: hidden; */
+}
+
+/* Fixed vertical sidebar */
+.menu {
+  width: 60px;
+  background: white;
+  border-right: 1px solid #eee;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* Scrollable main content */
+.main-content {
+  margin-left: 60px; /* offset for sidebar */
+  flex: 1;
+  /* overflow-y: auto; */
+  padding: 1rem;
+  /* box-sizing: border-box; */
+  background: #f9f9f9;
+}
+
+/* Main page content */
+.page-content {
+  margin-left: 100px; /* enough to avoid overlapping the fixed menu */
+  flex: 1;
+  padding: 1rem;
+}
+.icon {
+  font-size: 1.5rem;
+  padding: 2px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.2s;
+}
+
+.icon:hover,
+.icon.active {
+  background-color: #f0f0ff;
+}
+
+.avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ccc;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-wrapper {
+  min-height: 150vh; /* Force scroll temporarily for testing */
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.dash{
+  
+}

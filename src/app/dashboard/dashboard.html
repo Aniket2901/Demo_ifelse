@@ -1,0 +1,69 @@
+<div class="container">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <h2>Welcome back, Olivia</h2>
+    <div class="actions">
+      <button class="icon-btn"><i class="bi bi-search"></i></button>
+      <button class="action-btn"><i class="bi bi-sliders2"></i> Customize</button>
+      <button class="action-btn"><i class="bi bi-upload"></i> Export</button>
+    </div>
+  </div>
+
+  <!-- Row with 2 Cards -->
+  <div class="row">
+    <!-- Bar Chart Card -->
+    <div class="dash-card">
+      <div class="card">
+        <div class="card-header">
+          <div class="icon-title">
+            <i class="bi bi-box logo"></i>
+            <div class="graph_heading">
+              <h3>Vendor breakdown</h3>
+              <p>Keep track of vendors and their security ratings.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <canvas baseChart [data]="barChartData" [options]="barChartOptions" chartType="bar"></canvas>
+        </div>
+        <div class="card-footer">
+          <button class="btn">View full report</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gauge Card -->
+    <div class="vendors-card">
+      <div class="vendors-card__header">
+        <h3 class="vendors-card__title">Vendors monitored</h3>
+        <p class="vendors-card__subtitle">You're using 80% of available spots.</p>
+      </div>
+
+      <div class="vendors-card__content">
+        <div class="vendors-progress">
+          <svg viewBox="0 0 120 60" class="vendors-progress__svg">
+            <path d="M10 60 A50 50 0 0 1 110 60" fill="none" stroke="#e5e7eb" stroke-width="10" />
+            <path d="M10 60 A50 50 0 0 1 82 14" fill="none" stroke="#8b5cf6" stroke-width="10" stroke-linecap="round" />
+          </svg>
+          <div class="vendors-progress__value">240</div>
+          <div class="vendors-progress__growth">
+            <svg width="16" height="16" fill="green" viewBox="0 0 24 24">
+              <path d="M5 12l5-5 5 5H5z" />
+            </svg>
+            <span>10%</span>
+          </div>
+        </div>
+
+        <h4 class="vendors-card__limit">You’ve almost reached your limit</h4>
+        <p class="vendors-card__description">
+          You have used 80% of your available spots.<br />
+          Upgrade plan to monitor more vendors.
+        </p>
+      </div>
+
+      <div class="vendors-card__footer">
+        <button class="vendors-card__button">Upgrade plan</button>
+      </div>
+    </div>
+  </div>
+</div>
